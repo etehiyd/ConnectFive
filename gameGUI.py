@@ -3,7 +3,7 @@ import gameLogic
 import gameMap
 
 pygame.init()
-FONT = pygame.font.Font("msyh.ttc", 60)
+FONT = pygame.font.Font("./resources/fonts/msyh.ttc", 60)
 
 WIDTH = 1000
 HEIGHT = 1000
