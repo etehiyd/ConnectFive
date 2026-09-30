@@ -40,6 +40,9 @@ def drawPiece(row:int, col:int):
 
     #pygame.draw.circle(SCREEN, (0,0,0), (col * 60 + 80, row * 60 + 80), RADIUS)
 
+def drawText(text:str, pos:tuple[int,int]):
+    SCREEN.blit(FONT.render(text, True, LINE_COLOR), pos)
+
 def init():
     drawMap()
     pygame.display.flip()
@@ -66,13 +69,13 @@ def update():
 
             if gameLogic.win != gameMap.NONE:
                 if gameLogic.win == -1:
-                    text = FONT.render("平局", True, LINE_COLOR)
+                    text = "平局"
                 elif gameLogic.win == gameMap.BLACK:
-                    text = FONT.render("黑方获胜", True, LINE_COLOR)
+                    text = "黑方获胜"
                 else:
-                    text = FONT.render("白方获胜", True, LINE_COLOR)
+                    text = "白方获胜"
                 
-                SCREEN.blit(text, (350, 450))
+                drawText(text, (350, 30))
 
             #gameLogic.checkLine()
 
